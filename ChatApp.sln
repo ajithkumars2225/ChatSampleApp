@@ -1,0 +1,44 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36327.8 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ChatServer", "ChatServer", "{993DB60F-7038-44C7-9E8B-1C713A8CB5C0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ChatClient", "ChatClient", "{BF555597-978C-4EDD-B24B-805A94E5D630}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChatServer", "ChatServer\ChatServer.csproj", "{8B282AAE-6B7C-4914-B186-FBA060D51310}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChatClient", "ChatClient\ChatClient.csproj", "{73784FFE-7ADF-447E-938F-894A08071D40}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "proto", "proto", "{8EC462FD-D22E-90A8-E5CE-7E832BA40C5D}"
+	ProjectSection(SolutionItems) = preProject
+		protos\chat.proto = protos\chat.proto
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8B282AAE-6B7C-4914-B186-FBA060D51310}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8B282AAE-6B7C-4914-B186-FBA060D51310}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8B282AAE-6B7C-4914-B186-FBA060D51310}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8B282AAE-6B7C-4914-B186-FBA060D51310}.Release|Any CPU.Build.0 = Release|Any CPU
+		{73784FFE-7ADF-447E-938F-894A08071D40}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{73784FFE-7ADF-447E-938F-894A08071D40}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{73784FFE-7ADF-447E-938F-894A08071D40}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{73784FFE-7ADF-447E-938F-894A08071D40}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{8B282AAE-6B7C-4914-B186-FBA060D51310} = {993DB60F-7038-44C7-9E8B-1C713A8CB5C0}
+		{73784FFE-7ADF-447E-938F-894A08071D40} = {BF555597-978C-4EDD-B24B-805A94E5D630}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7A4CD03C-4F59-443D-80B8-C1DF87755E63}
+	EndGlobalSection
+EndGlobal

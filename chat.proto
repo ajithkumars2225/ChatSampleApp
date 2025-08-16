@@ -1,0 +1,56 @@
+syntax = "proto3";
+
+option csharp_namespace = "Chat.Proto";
+package chat;
+
+message RegisterRequest {
+  string user_id = 1;
+  string display_name = 2;
+}
+
+message RegisterReply {
+  bool success = 1;
+  string message = 2;
+}
+
+message ConnectRequest {
+  string user_id = 1;
+}
+
+message ChatMessage {
+  string message_id = 1;
+  string from_id     = 2;
+  string to_id       = 3;
+  string text        = 4;
+  int64  timestamp   = 5; // unix ms
+}
+
+message SendRequest {
+  ChatMessage message = 1;
+}
+
+message SendReply {
+  bool accepted = 1;
+  string info   = 2;
+}
+
+message SystemNotice {
+  string text = 1;
+}
+
+message ServerEvent {
+  oneof payload {
+    ChatMessage incoming = 1; // message for the client
+    SystemNotice notice   = 2; // system info
+  }
+}
+
+message LookupRequest { string user_id = 1; }
+message LookupReply   { bool exists = 1; string display_name = 2; }
+
+service ChatService {
+  rpc Register    (RegisterRequest) returns (RegisterReply);
+  rpc Connect     (ConnectRequest)  returns (stream ServerEvent); // server->client stream
+  rpc SendMessage (SendRequest)     returns (SendReply);
+  rpc Lookup      (LookupRequest)   returns (LookupReply);
+}
